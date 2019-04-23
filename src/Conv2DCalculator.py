@@ -4,9 +4,10 @@ from tkinter import messagebox
 from tkinter import ttk
 from src.Common import entrySelectAllHandler
 
+
 class Conv2DCalculator:
     def __init__(self, window):
-        self.windowLabel = "2D Convolution"
+        self.windowLabel = "2D Convolution Layer"
         window.title(self.windowLabel)
 
         self.window = ttk.Frame(window)
@@ -15,8 +16,6 @@ class Conv2DCalculator:
 
         self.__add_labels__()
         self.__add_input_fields__()
-        self.close_btn = ttk.Button(window, text="Close")
-        self.close_btn.pack(padx=5, pady=5)
 
     def __add_labels__(self):
         ttk.Label(self.window, text="Input Size") \
@@ -80,7 +79,7 @@ class Conv2DCalculator:
         # output filed
         self.output_field = ttk.Entry(self.window)
         self.output_field.insert(0, "Output")
-        self.output_field.grid(row=5, column=4, columnspan=2, padx=5, pady=5, sticky="w")
+        self.output_field.grid(row=5, column=4, columnspan=2, padx=5, pady=25, sticky="w")
         self.output_field.bind('<Control-a>', entrySelectAllHandler)
         self.output_field.config(state='readonly')
 
