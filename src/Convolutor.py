@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
-from src.Conv2DCalculator import Conv2DCalculator
-from src.Maxpool2DCalculator import Maxpool2DCalculator
+from Conv2DCalculator import Conv2DCalculator
+from Maxpool2DCalculator import Maxpool2DCalculator
 
 
 class ButtonCfg:
@@ -53,6 +53,7 @@ class ButtonOperation:
 
 class Convolutor:
     def __init__(self, rootWindow):
+
         self.root = rootWindow
         self.root.title("CONVOLUTOR")
 
@@ -61,15 +62,9 @@ class Convolutor:
         self.convolution2DCalculator = ButtonOperation(root=self.root, calculatorFunction=Conv2DCalculator,
                                                        buttonCfg=self.convolution2DButtonConfig)
         # Maxpool2D
-        self.maxpool2DButtonConfig = ButtonCfg(r=0, c=1, padx=10, pady=10, text="MaxPool2D")
+        self.maxpool2DButtonConfig = ButtonCfg(r=1, c=0, padx=10, pady=10, text="MaxPool2D")
         self.maxpool2DCalculator = ButtonOperation(root=self.root, calculatorFunction=Maxpool2DCalculator,
                                                    buttonCfg=self.maxpool2DButtonConfig)
-
-        # ConvTranspose2D
-        self.convtranspose2DButtonConfig = ButtonCfg(r=0, c=2, padx=10, pady=10, text="ConvTranspose2D")
-        self.convtranspose2DCalculator = ButtonOperation(root=self.root, calculatorFunction=None,
-                                                         buttonCfg=self.convtranspose2DButtonConfig)
-
 
 def main():
     root = Tk()

@@ -2,7 +2,7 @@ import math
 import re
 from tkinter import messagebox
 from tkinter import ttk
-from src.Common import entrySelectAllHandler
+from Common import entrySelectAllHandler
 
 
 class Conv2DCalculator:
